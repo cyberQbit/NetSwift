@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://i.imgur.com/bF78MnT.png" alt="NetSwift Logo" width="480" height="480" style="border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
   <h1>🌐 NetSwift Pro v2.0</h1>
-  <p><b>Elite Network & Cybersecurity Command Center.<br>Gelişmiş Ağ ve Siber Güvenlik Komuta Merkezi.</b></p>
+  <p><b>Network & Cybersecurity Command Center.<br>Gelişmiş Ağ ve Siber Güvenlik Komuta Merkezi.</b></p>
   
   <p>
     <img src="https://img.shields.io/badge/Release-v2.0%20Elite-blue?style=flat-square" alt="NetSwift Version">
@@ -23,7 +23,7 @@
   
   <p><b>NetSwift Pro</b> is the ultimate network management and cybersecurity toolkit of the cyberQbit Terminal Ecosystem. Built on a bulletproof ASCII architecture, it completely eliminates the need for third-party networking tools. From extracting Wi-Fi passwords to scanning open ports and generating detailed network forensics reports, NetSwift gives you absolute control over your connection.</p>
 
-  ### 🚀 Key Features (v2.0 Elite)
+  ### 🚀 Key Features (v2.0)
   - **🔍 Wi-Fi Forensics:** Instantly extract and display all saved Wi-Fi networks and their clear-text passwords.
   - **🛡️ Smart DNS & Killswitch:** Switch to the world's fastest DNS servers (Cloudflare, Quad9) or instantly drop your internet connection with a built-in panic button.
   - **📡 LAN & Port Scanner:** Built-in vulnerability analyzer! Discover connected devices on your local network and scan them for open ports (FTP, SSH, HTTP, RDP) in milliseconds.
@@ -45,7 +45,7 @@
   
   <p><b>NetSwift Pro</b>, cyberQbit Terminal Ekosisteminin en gelişmiş ağ yönetimi ve siber güvenlik aracıdır. Kurşun geçirmez ASCII mimarisi üzerine inşa edilen bu araç, üçüncü parti ağ izleme programlarına olan ihtiyacı tamamen ortadan kaldırır. Wi-Fi şifrelerini kırmaktan, açık port taramalarına ve detaylı ağ adli bilişim raporları oluşturmaya kadar bağlantınız üzerindeki mutlak kontrolü size verir.</p>
 
-  ### 🚀 Öne Çıkan Özellikler (v2.0 Elite)
+  ### 🚀 Öne Çıkan Özellikler (v2.0)
   - **🔍 Wi-Fi Dedektifi:** Sistemde kayıtlı olan tüm Wi-Fi ağlarını ve gizli şifrelerini saniyeler içinde deşifre eder.
   - **🛡️ Akıllı DNS ve Ağ Katili:** Dünyanın en hızlı DNS sunucularına tek tıkla geçiş yapın veya panik butonuyla interneti anında kesin.
   - **📡 LAN ve Port Tarayıcı (Zafiyet Analizi):** Kendi ağınıza bağlı cihazları anında bulun ve açık kapıları (Portları) milisaniyeler içinde tarayın.
