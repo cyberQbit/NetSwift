@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgur.com/bF78MnT.png" alt="NetSwift Logo" width="480" height="480" style="border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+  <img src="https://i.imgur.com/bF78MnT.png" alt="NetSwift Logo" width="580" height="180" style="border-radius: 0px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
   <h1>🌐 NetSwift Pro v2.0</h1>
   <p><b>Network & Cybersecurity Command Center.<br>Gelişmiş Ağ ve Siber Güvenlik Komuta Merkezi.</b></p>
   
