@@ -715,7 +715,10 @@ echo.
 call :PrintSeparator
 echo %BOLD%%CYAN%[⚡] DOWNLOAD HIZ TESTİ:%RESET%
 call :PrintSeparator
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $u='https://speed.cloudflare.com/__down?bytes=15000000'; $f=[System.IO.Path]::GetTempFileName(); try { $start=Get-Date; (New-Object System.Net.WebClient).DownloadFile($u, $f); $end=Get-Date; $size=(Get-Item $f).Length; $speed=[Math]::Round(($size * 8 / ($end - $start).TotalSeconds) / 1Mb, 2); Write-Host '  [✓] Download Hizi: ' -NoNewline; Write-Host \"$speed Mbps\" -ForegroundColor Green; } catch { Write-Host '  [!] Cloudflare sunucusuna ulasilamadi Hata: ' -ForegroundColor Red -NoNewline; Write-Host $_.Exception.Message -ForegroundColor DarkGray; } finally { if (Test-Path $f) { Remove-Item $f -Force } }"
+:: ==============================================================================
+:: HIZ TESTİ - CLOUDFLARE ALTYAPISI (WAF BYPASS & USER-AGENT SPOOFING)
+:: ==============================================================================
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $u='https://speed.cloudflare.com/__down?bytes=15000000'; $f=[System.IO.Path]::GetTempFileName(); try { $start=Get-Date; $wc=New-Object System.Net.WebClient; $wc.Headers.Add('User-Agent','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'); $wc.DownloadFile($u, $f); $end=Get-Date; $size=(Get-Item $f).Length; $speed=[Math]::Round(($size * 8 / ($end - $start).TotalSeconds) / 1Mb, 2); Write-Host '[+] Download Hizi: ' -NoNewline; Write-Host \"$speed Mbps\" -ForegroundColor Green; } catch { Write-Host '[!] Cloudflare engeli veya baglanti hatasi: ' -ForegroundColor Red -NoNewline; Write-Host $_.Exception.Message -ForegroundColor DarkGray; } finally { if (Test-Path $f) { Remove-Item $f -Force } }"
 echo.
 
 call :PrintSeparator
