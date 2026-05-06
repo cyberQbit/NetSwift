@@ -715,7 +715,7 @@ echo.
 call :PrintSeparator
 echo %BOLD%%CYAN%[⚡] DOWNLOAD HIZ TESTİ:%RESET%
 call :PrintSeparator
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='SilentlyContinue'; $u='https://js.monitor-test.com/10MB.bin'; $f=[System.IO.Path]::GetTempFileName(); try { $start=Get-Date; (New-Object System.Net.WebClient).DownloadFile($u, $f); $end=Get-Date; $size=(Get-Item $f).Length; $speed=[Math]::Round(($size * 8 / ($end - $start).TotalSeconds) / 1Mb, 2); Write-Host '  [✓] Download Hizi: ' -NoNewline; Write-Host \"$speed Mbps\" -ForegroundColor Green; Remove-Item $f -Force } catch { Write-Host '  [!] Test sunucusuna ulasilamadi.' -ForegroundColor Red }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $u='https://speed.cloudflare.com/__down?bytes=15000000'; $f=[System.IO.Path]::GetTempFileName(); try { $start=Get-Date; (New-Object System.Net.WebClient).DownloadFile($u, $f); $end=Get-Date; $size=(Get-Item $f).Length; $speed=[Math]::Round(($size * 8 / ($end - $start).TotalSeconds) / 1Mb, 2); Write-Host '  [✓] Download Hizi: ' -NoNewline; Write-Host \"$speed Mbps\" -ForegroundColor Green; } catch { Write-Host '  [!] Cloudflare sunucusuna ulasilamadi Hata: ' -ForegroundColor Red -NoNewline; Write-Host $_.Exception.Message -ForegroundColor DarkGray; } finally { if (Test-Path $f) { Remove-Item $f -Force } }"
 echo.
 
 call :PrintSeparator
