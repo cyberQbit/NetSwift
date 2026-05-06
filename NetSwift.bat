@@ -713,9 +713,9 @@ echo %CYAN%[▓] Hız testi başlatılıyor...%RESET%
 echo.
 
 call :PrintSeparator
-echo %BOLD%%CYAN%[⚡] DOWNLOAD HIZ TESTİ (10MB Test Dosyası):%RESET%
+echo %BOLD%%CYAN%[⚡] DOWNLOAD HIZ TESTİ:%RESET%
 call :PrintSeparator
-powershell -command "$start = Get-Date; try { Invoke-WebRequest -Uri 'http://speedtest.ftp.otenet.gr/files/test10Mb.db' -OutFile '$env:TEMP\speedtest.tmp' -TimeoutSec 30 -UseBasicParsing; $end = Get-Date; $duration = ($end - $start).TotalSeconds; $speed = [math]::Round((10 / $duration), 2); Write-Host \"  [✓] Download Hızı: $speed Mbps\" -ForegroundColor Green; Write-Host \"  └─ Süre: $([math]::Round($duration, 2)) saniye\" -ForegroundColor Cyan; Remove-Item '$env:TEMP\speedtest.tmp' -Force } catch { Write-Host \"  [!] Download testi başarısız.\" -ForegroundColor Red }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='SilentlyContinue'; $u='https://js.monitor-test.com/10MB.bin'; $f=[System.IO.Path]::GetTempFileName(); try { $start=Get-Date; (New-Object System.Net.WebClient).DownloadFile($u, $f); $end=Get-Date; $size=(Get-Item $f).Length; $speed=[Math]::Round(($size * 8 / ($end - $start).TotalSeconds) / 1Mb, 2); Write-Host '  [✓] Download Hizi: ' -NoNewline; Write-Host \"$speed Mbps\" -ForegroundColor Green; Remove-Item $f -Force } catch { Write-Host '  [!] Test sunucusuna ulasilamadi.' -ForegroundColor Red }"
 echo.
 
 call :PrintSeparator
